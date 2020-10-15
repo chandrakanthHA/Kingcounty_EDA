@@ -21,12 +21,12 @@ df = df.drop(['numberofbathrooms_per_house','housing_grade','number_of_bedrooms'
              'house_condition','yr_built'], axis=1)
 
 # feature engineering
-X = df.iloc[:,1:]
-Y = df.iloc[:, 0] 
+Y = df.price
+X = df.drop(['price'], axis=1)
 
 #splitting data
 print("-----  Splitting the data in train and test ----")
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 #adding the constant
 
